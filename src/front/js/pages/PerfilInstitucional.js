@@ -32,7 +32,7 @@ const PerfilInstitucional = () => {
 
           <div className="d-flex justify-content-between align-items-center mt-3 px-4">
             <div className="mb-3">
-              <label for="exampleInputPassword1" className="correo form-label">
+              <label htmlFor="exampleInputPassword1" className="correo form-label">
                 Correo
               </label>
               <input

@@ -3,7 +3,7 @@ import React from "react";
 
 export const Footer = () => (
   <footer
-    className="footer mt-auto py-3 "
+    className="footer mt-auto py-3 sticky-bottom"
     style={{ backgroundColor: "#06132f" }}
   >
     <div className="row">

@@ -383,8 +383,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ my_tracker: result.becas_guardadas })
 
 					if (response.ok) {
+						if (result.becas_guardadas.length === 0) {
+							showAlert("info","No hay aplicaciones registradas.")
+						} else {
 						console.log("Becas actualizadas")
-					} 
+					} }
 
 					if (response.status == 400) {
 						alert(result.message)

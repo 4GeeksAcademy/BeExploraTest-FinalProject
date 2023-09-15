@@ -34,7 +34,7 @@ const RegistroInst = () => {
           />
         </div>
 
-        <div class="mb-3">
+        <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">
             Correo Institucional
           </label>
@@ -49,7 +49,7 @@ const RegistroInst = () => {
           />
         </div>
 
-        <div class="mb-4">
+        <div className="mb-4">
           <label htmlFor="exampleInputPassword1" className="form-label">
             Contraseña
           </label>
@@ -63,12 +63,12 @@ const RegistroInst = () => {
 
           />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Registrarse
         </button>
       </form>
     </div>
-    <div id="customAlertLogInInst" class="alertMissing container justify-content-center align-items-center"></div>
+    <div id="customAlertLogInInst" className="alertMissing container justify-content-center align-items-center"></div>
     </div>
   );
 };

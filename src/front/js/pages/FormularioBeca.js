@@ -47,7 +47,7 @@ const FormularioBeca = () => {
           </div>
           <div className='col-3'>
             <label htmlFor="modalidadBeca" className="form-label">Presencial o Virtual?</label>
-            <select name='modality' class="form-select" id="modalidadBeca" onChange={handleChangeScholarshipPost}>
+            <select name='modality' className="form-select" id="modalidadBeca" onChange={handleChangeScholarshipPost}>
               <option selected disabled muted >Escoja una opción</option>
               <option value="Presencial">Presencial</option>
               <option value="Virtual">Virtual</option>
@@ -62,7 +62,7 @@ const FormularioBeca = () => {
           </div>
           <div className='col-4'>
             <label htmlFor="coberturaBeca" className="form-label">Cobertura Financiera de la Beca</label>
-            <select name='coverage' class="form-select" id="coberturaBeca" onChange={handleChangeScholarshipPost}>
+            <select name='coverage' className="form-select" id="coberturaBeca" onChange={handleChangeScholarshipPost}>
               <option name='coverage' selected disabled>Escoja una opción</option>
               <option value="Completa">Completa</option>
               <option value="Parcial">Parcial</option>
@@ -79,14 +79,14 @@ const FormularioBeca = () => {
             <button className='mt-4 button-post' onClick={handleScholarshipPost} >Publicar</button>
           </div>
           <div className='col-6'>
-            <label for="descripcionBeca" class="form-label" >Descripción de los Beneficios y Requerimientos para Participar</label>
-            <textarea name='description' class="form-control" id="descripcionBeca" rows="4" onChange={handleChangeScholarshipPost}></textarea>
+            <label htmlFor="descripcionBeca" className="form-label" >Descripción de los Beneficios y Requerimientos para Participar</label>
+            <textarea name='description' className="form-control" id="descripcionBeca" rows="4" onChange={handleChangeScholarshipPost}></textarea>
           </div>
         </div>
 
 
       </div>
-      <div id="customAlertPost" class="alertMissing container justify-content-center align-items-center"></div>
+      <div id="customAlertPost" className="alertMissing container justify-content-center align-items-center"></div>
     </div>
   );
 }

@@ -21,39 +21,39 @@ const IniciarSesionInstitucion = () => {
     >
       <form noValidate onSubmit={e=>{e.preventDefault(); actions.logInInstitution()}} >
         <h2 className="tituloRegistro mb-4">Iniciar Sesión</h2>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="exampleInputPassword1" className="form-label">
             Correo
           </label>
           <input
             name="email"
             type="email"
-            class="form-control"
+            className="form-control"
             id="exampleInputPassword1"
             placeholder="Ingrese su correo"
             onChange={handleChangeLoginInstitution} 
           />
         </div>
 
-        <div class="mb-4">
-          <label for="exampleInputPassword1" class="form-label">
+        <div className="mb-4">
+          <label htmlFor="exampleInputPassword1" className="form-label">
             Contraseña
           </label>
           <input
             name="password"
             type="password"
-            class="form-control"
+            className="form-control"
             id="exampleInputPassword1"
             placeholder="Ingrese su contraseña"
             onChange={handleChangeLoginInstitution} 
           />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Iniciar Sesión
         </button>
       </form>
     </div>
-    <div id="customAlertLogInInst" class="alertMissing container justify-content-center align-items-center"></div>
+    <div id="customAlertLogInInst" className="alertMissing container justify-content-center align-items-center"></div>
     </div>
   );
 };
