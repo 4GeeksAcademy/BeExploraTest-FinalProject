@@ -75,7 +75,7 @@ export const Home = () => {
       <div className="third-block" ref={thirdBlockRef}>
         <div className="container">
           <h1 className="title-becas">
-            Becas Disponibles <i class="fa-solid fa-arrow-right" />
+            Becas Disponibles <i className="fa-solid fa-arrow-right" />
           </h1>
           <div className="card-holder my-4">
             <CardBeca />
