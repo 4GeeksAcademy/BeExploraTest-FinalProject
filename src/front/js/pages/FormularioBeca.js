@@ -75,7 +75,6 @@ const FormularioBeca = () => {
             <label htmlFor="urlBeca" className="form-label">URL para la Página de Inscripción</label>
             <input name='url_to' type="email" className="form-control" id="urlBeca" placeholder='https://' onChange={handleChangeScholarshipPost}/>
             
-            //  Acá está el botón del postScholarship fetch
             <button className='mt-4 button-post' onClick={handleScholarshipPost} >Publicar</button>
           </div>
           <div className='col-6'>
