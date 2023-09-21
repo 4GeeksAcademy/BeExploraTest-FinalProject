@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/Formulario.css";
@@ -6,6 +6,7 @@ import "../../styles/Formulario.css";
 const FormularioBeca = () => {
   const navigate = useNavigate()
   const { store, actions } = useContext(Context);
+  const [urlError, setUrlError] = useState(false); // Estado para manejar errores de URL
 
   
   const handleChangeScholarshipPost =(e)=>{
@@ -13,8 +14,13 @@ const FormularioBeca = () => {
   }
 
   const handleScholarshipPost = () => {
-    actions.postScholarship()
-  }
+    if (store.scholarshipsPosted.url_to.startsWith('https://')) {
+      actions.postScholarship();
+    } else {
+      setUrlError(true);
+    }
+  
+}
 
   useEffect(() => {
     if (store.scholarshipPosted) {
@@ -22,7 +28,7 @@ const FormularioBeca = () => {
       navigate('/');
     }
   }, [store.scholarshipPosted]);
-
+  
 
   return (
     <div className='container'>
@@ -43,7 +49,7 @@ const FormularioBeca = () => {
         <div className='row m-3 pt-3'>
           <div className='col-9'>
             <label htmlFor="nombreBeca" className="form-label">Nombre de la Beca por Ofrecer</label>
-            <input name='scholarship_name' type="email" className="form-control" id="nombreBeca" placeholder='Nombre de la Beca' onChange={handleChangeScholarshipPost}/>
+            <input name='scholarship_name' type="text" className="form-control" id="nombreBeca" placeholder='Nombre de la Beca' onChange={handleChangeScholarshipPost}/>
           </div>
           <div className='col-3'>
             <label htmlFor="modalidadBeca" className="form-label">Presencial o Virtual?</label>
@@ -73,8 +79,9 @@ const FormularioBeca = () => {
         <div className='row mt-3 mx-3 mb-4 pt-3'>
           <div className='col-6'>
             <label htmlFor="urlBeca" className="form-label">URL para la Página de Inscripción</label>
-            <input name='url_to' type="email" className="form-control" id="urlBeca" placeholder='https://' onChange={handleChangeScholarshipPost}/>
-            
+            <input name='url_to' type="text" className="form-control" id="urlBeca" placeholder='https://' onChange={handleChangeScholarshipPost}/>
+            {urlError && <p className="text-danger">La URL debe comenzar con "https://".</p>}
+
             <button className='mt-4 button-post' onClick={handleScholarshipPost} >Publicar</button>
           </div>
           <div className='col-6'>

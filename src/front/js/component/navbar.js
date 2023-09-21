@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
@@ -7,7 +7,6 @@ export const Navbar = () => {
 
   const { store, actions } = useContext(Context);
 
-  
 
   return (
     <nav className="navbar">
@@ -36,7 +35,8 @@ export const Navbar = () => {
               <button className="button-regular mx-1" hidden={(store.insLoged)} onClick={() => actions.getMyTracker()}>
                 Mis Aplicaciones
               </button>
-            )}
+            )} 
+
           </Link>
 
           {/* las siguientes dos condiciones funcionan para poner a disposición el tipo de perfil según el tipo de user */}

@@ -68,3 +68,23 @@
 .stats span {
   font-size: 29px;
 }
+
+.no-scholarships-message {
+  font-size: 4rem;
+  justify-content: center;
+  align-items: start;
+}
+
+.tracker__button{
+  color: #E1721D;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  padding: 1rem 1rem 3rem 1rem;
+  transition-duration: 0.4s;
+  height: 3rem;
+  border-radius: 3rem;
+
+}

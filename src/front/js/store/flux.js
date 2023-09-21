@@ -36,6 +36,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			scholarshipsPosted: [],
 			scholarshipPosted: false,
 			allScholarships: [],
+			noScholarships: false
+			
 
 		},
 		actions: {
@@ -159,10 +161,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const newUserData = { ...store.institutionalLogin }
 					newUserData[e.target.name] = e.target.value
 					setStore({ institutionalLogin: newUserData })
-				} else if (type == "createScholarship") {
-					const newUserData = { ...store.scholarshipsPosted }
-					newUserData[e.target.name] = e.target.value
-					setStore({ scholarshipsPosted: newUserData })
+				} else if (type === "createScholarship") {
+					const newScholarshipData = { ...store.scholarshipsPosted }; // Cambia scholarshipsPosted por createScholarship
+					newScholarshipData[e.target.name] = e.target.value;
+					setStore({ scholarshipsPosted: newScholarshipData }); // Cambia scholarshipsPosted por createScholarship										
+				
+				} else if (type == "createScholarship") { 
+				 	const newUserData = { ...store.scholarshipsPosted } 
+				 	newUserData[e.target.name] = e.target.value 
+				 	setStore({ scholarshipsPosted: newUserData }) 
 				}
 			},
 
@@ -385,6 +392,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (response.ok) {
 						if (result.becas_guardadas.length === 0) {
 							showAlert("info","No hay aplicaciones registradas.")
+							
+
 						} else {
 						console.log("Becas actualizadas")
 					} }
@@ -392,6 +401,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (response.status == 400) {
 						alert(result.message)
 						showAlert("info","No hay aplicaciones registradas.")
+						setStore({ noScholarships: true })
+
 					} 
 					
 					if (response.status == 422) {
@@ -402,6 +413,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error + " Error loading message from backend")
 					showAlert("error","Error. Por favor inténtalo más tarde.")
 				}
+			},
+
+			changeScholarshipsStatus: (value) => {
+				setStore({ noScholarships: value })
 			},
 
 
